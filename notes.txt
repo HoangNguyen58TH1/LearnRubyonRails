@@ -1,0 +1,96 @@
+### Video 6
+1. create controller Home
+rails generate controller Home
+Trong controller Home --> create def index.
+2. Trong route.rb
+root to: "home#index"
+3. Create index.html.erb
+  --> tests page home.
+
+4. 
+add navbar
+add jumbotron
+
+5. create posts.
+
+6. show post in page Home.
++  create variable @posts = Post.all
+
+7. For each all post ra View.
+
+<% @posts.each do |post| %>
+  <%= post.title %> h1
+  <%= post.content %> p
+<% end %>
+
+chia 3 col --> row --> 3 col-4
+h1.p
+
+8. Because content dài quá --> làm ngắn làm
+--> Dùng function truncate()
+
+api.rubyonrails.org --> searcg truncate() --> đọc nó
+
+<% @posts.each do |post| %>
+  <%= post.title %> h1
+  <%= truncate(post.content, length: 150) %> p
+<% end %>
+
+9. Readmore
+<%= link_to 'Read more', post_path(post) %>
+
+10. click home --> return page Home
+  href = "<%= root_path %>"
+
+11. Bây giờ muốn thanh navbar đi đâu cũng có --> tức là dùng chung ý.
+  --> move nó qua application.html.erb
+  --> sau đó convert nó thành 1 cái partial bằng cách:
+  + create file _navbar.html.erb
+  + move code navbar qua file trên.
+  + render file đó ra: <%= render 'layouts/_navbar' %>
+
+
+### Video 7
+Rails c (console)
+Post.count
+
+post = Post.new
+post.title = ''
+post.content = ''
+post.save
+
+Post.count
+
+Post.all
+Post.find(3)
+
+Post.find_by(title: "???")
+post.content = '???'
+
+post.update(content: '???')
+
+post.destroy
+Post.count
+
+### Video 8
+guides.rubyonrails.org
+--> Active Record Validations --> có nhiều  validation helper
+search presense(sự hiện diện)
+open models/post.rb --> code validation vào đó.
+
+Nó sẽ in ra error, thì cái error này nó ở từ _form ra.
+- rails c
+  --> post = Post.new
+      post.save
+      post.errors.full_messages
+
+- Muốn cho content có length ngắn nhất 100 character.
+--> using helper length.
+
+class Post < ApplicationRecord
+  validates :title, :content, presence: true
+  validates :content, length: { minimum: 20 }
+end
+
+
+# Read pages guides.rubyonrails.org

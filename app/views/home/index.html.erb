@@ -1,0 +1,14 @@
+<div class="jumbotron jumbotron-fluid text-center">
+  <h1>Blog Hoang Toni</h1>
+  <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+</div>
+
+<div class="row">
+  <% @posts.each do |post| %>
+  <div class="col-4">
+    <h1><%= post.title %></h1>
+    <p><%= truncate(post.content, length: 150, separator: ' ') %></p>
+    <%= link_to 'Read more', post_path(post) %>
+  </div>
+  <% end %>
+</div>

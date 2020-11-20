@@ -112,3 +112,10 @@ end
 - Tên model là số ít. Tên controller là số  nhiều
 VD: model: User.rb --> Controller: users_controller.rb
 ### Practice Rspec in RoR
+
+### 20/11/2020
+- Rspec là testing framework
+- Rspec Rails là mở rộng của Rspec, giúp mình viết unit test cho controller, view, models vs helper.
+- ??? Nó cũng cung cấp khả năng viết integration tests với selenium (sử dụng capybara).
+
+- 

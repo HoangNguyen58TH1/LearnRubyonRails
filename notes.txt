@@ -94,3 +94,21 @@ end
 
 
 # Read pages guides.rubyonrails.org
+
+### Video 9: Deploy app in Heroku
+- Xem qua cho biết thôi. Đang chán nên k làm theo đâu, chán lắm.
+- Kiếm cái khác xem rồi làm cho đỡ chán.
+
+### Read document MVC RoR
+- Model (ActiveRecord) interactive with db
+  --> implement in library ActiveRecord (giao diện db)
+
+- View (ActionView) interactive with files html.erb
+  --> implement in lirary ActiveView (công cụ trình bày)
+
+- Controller (ACtionController) interactive with Model && Controller
+  --> implement in ActionContoder (action between ActiveRecord with ActionView)
+
+- Tên model là số ít. Tên controller là số  nhiều
+VD: model: User.rb --> Controller: users_controller.rb
+### Practice Rspec in RoR
